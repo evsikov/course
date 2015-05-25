@@ -1,1 +1,1 @@
-Some local javascript course code repository for homework
+Local javascript course code repository for homework
