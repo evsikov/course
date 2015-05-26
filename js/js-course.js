@@ -36,12 +36,28 @@ var JsCourse = {
         return curriedFn([]);
     },
 
-    linearFold : function (array, callback) {
-    //todo:
+    linearFold : function (array, callback, initValue) {
+        var base = initValue || 0;
+        for (var i = 0; i < array.length; i++) {
+            base=callback(base, array[i], i, array);
+        }
+        return base;
     },
 
-    linearUnfold : function (array, callback) {
-        //todo:
+    linearUnfold : function (callback, initialValue) {
+        /*callback (currentState) {
+         return {"state":,
+         "element":};
+         }*/
+        var elements = [],
+            state = initialValue,
+            callbackResult;
+
+        while(callbackResult = callback(state)) {
+            elements.push(callbackResult.element);
+            state = callbackResult.state;
+        }
+        return elements;
     },
 
     map : function (array, callback) {
