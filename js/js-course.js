@@ -61,10 +61,33 @@ var JsCourse = {
     },
 
     map : function (array, callback) {
-        //todo:
+        var resultArray = [];
+        for (var i = 0; i<array.length; i++) {
+            resultArray.push(callback(array[i]));
+        }
+        return resultArray;
+    },
+
+    mapF : function fn (array, callback) {
+        if (array.length < 1) return [];
+        return [].concat(callback(array[0])).concat(fn(array.slice(1), callback));
     },
 
     filter : function (array, callback) {
-        //todo:
+        var resultArray = [];
+        for (var i = 0; i<array.length; i++) {
+            if (callback(array[i])) {
+                resultArray.push(array[i]);
+            }
+        }
+        return resultArray;
+    },
+
+    filterF : function fn (array, callback) {
+        if (array.length < 1) return [];
+
+        return (callback(array[0])) ?
+            [].concat(array[0]).concat(fn(array.slice(1), callback)) :
+            [].concat(fn(array.slice(1), callback));
     }
 };
