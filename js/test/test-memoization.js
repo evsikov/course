@@ -16,5 +16,7 @@ describe("test memoization", function() {
         var memFib = JsCourse.memoization(fibonacci);
         expect(memFib.fn(10)).toEqual(55);
         expect(memFib.memo).toEqual({ 10: 55});
+        expect(memFib.fn(20)).toEqual(6765);
+        expect(memFib.memo).toEqual({ 10: 55, 20: 6765 });
     });
 });
