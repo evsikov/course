@@ -108,11 +108,28 @@ var JsCourse = {
         return JsCourse.filter(array,condition)[0];
     },
 
-    lazyEvaluation : function () {
-        //todo:
+    lazyEvaluation : function (fn) {
+        var args = Array.prototype.slice.call(arguments,1);
+        return function() {
+            return fn.apply(null, args);
+        }
     },
 
-    memoization : function () {
-        //todo:
+    memoization : function (func) {
+        var memo = {};
+        var slice = Array.prototype.slice;
+
+        return {
+            memo : memo,
+            fn : function() {
+                var args = slice.call(arguments);
+                if (args in memo){
+                    return memo[args];
+                }
+                else {
+                    return (memo[args] = func.apply(this, args));
+                }
+            }
+        }
     }
 };
