@@ -1,4 +1,6 @@
 describe("test first", function() {
+    'use strict';
+
     it("should be defined", function() {
         expect(JsCourse.first).toBeDefined();
     });

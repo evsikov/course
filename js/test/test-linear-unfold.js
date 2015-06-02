@@ -1,4 +1,6 @@
 describe("test linear unfold", function() {
+    'use strict';
+
     it("should be defined", function() {
         expect(JsCourse.linearUnfold).toBeDefined();
     });

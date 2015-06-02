@@ -1,4 +1,6 @@
 describe("test average of even", function() {
+    'use strict';
+
     it("should be defined", function() {
         expect(JsCourse.averageOfEven).toBeDefined();
     });

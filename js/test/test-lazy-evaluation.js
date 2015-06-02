@@ -1,4 +1,6 @@
 describe("test lazy evaluation", function() {
+    'use strict';
+
     it("should be defined", function() {
         expect(JsCourse.lazyEvaluation).toBeDefined();
     });

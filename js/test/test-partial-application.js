@@ -1,4 +1,6 @@
 describe("partial application", function() {
+    'use strict';
+
     it("should be defined", function() {
         expect(JsCourse.partialApplication).toBeDefined();
     });
@@ -8,7 +10,7 @@ describe("partial application", function() {
             var args = Array.prototype.slice.call(arguments, 0),
                 sum = 0;
 
-            for (i = 0; i < args.length; i++) {
+            for (var i = 0; i < args.length; i++) {
                 sum+=args[i];
             }
             return sum;

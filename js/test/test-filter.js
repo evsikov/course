@@ -1,4 +1,6 @@
 describe("test filter", function() {
+    'use strict';
+
     it("should be defined", function() {
         expect(JsCourse.filter).toBeDefined();
     });
@@ -9,7 +11,7 @@ describe("test filter", function() {
         };
 
         var number = function (val) {
-            return (typeof val == 'number') ;
+            return (typeof val === 'number') ;
         };
 
         expect(JsCourse.filter([-3,0,4,-13,18], positive)).toEqual([4,18]);

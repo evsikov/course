@@ -1,4 +1,6 @@
 describe("test memoization", function() {
+    'use strict';
+
     it("should be defined", function() {
         expect(JsCourse.memoization).toBeDefined();
     });

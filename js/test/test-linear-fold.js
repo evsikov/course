@@ -1,4 +1,6 @@
 describe("test linear fold", function() {
+    'use strict';
+
     it("should be defined", function() {
         expect(JsCourse.linearFold).toBeDefined();
     });

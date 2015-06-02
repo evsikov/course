@@ -1,4 +1,6 @@
 describe("test currying", function() {
+    'use strict';
+
     it("should be defined", function() {
         expect(JsCourse.curry).toBeDefined();
     });

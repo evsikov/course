@@ -1,4 +1,6 @@
 describe("test sum of random numbers", function() {
+    'use strict';
+
     it("should be defined", function() {
         expect(JsCourse.sumOfRandomNumbers).toBeDefined();
     });

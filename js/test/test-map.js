@@ -1,4 +1,6 @@
 describe("test map", function() {
+    'use strict';
+
     it("should be defined", function() {
         expect(JsCourse.map).toBeDefined();
     });
