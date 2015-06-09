@@ -1,28 +1,31 @@
-describe("test currying", function() {
-    'use strict';
+define (['firstclassfunc'], function (firstclassfunc) {
 
-    it("should be defined", function() {
-        expect(JsCourse.curry).toBeDefined();
-    });
+    describe("test currying", function() {
+        'use strict';
 
-    it("curry adder should return result", function() {
-        var threeArgumentsAdder = function(x,y,z) {
-            return x + y + z;
-        };
-        var curryAdder = JsCourse.curry(threeArgumentsAdder);
-        expect(curryAdder(3)(2)(1)).toEqual(6);
-    });
+        it("should be defined", function() {
+            expect(firstclassfunc.curry).toBeDefined();
+        });
 
-    it("curry multiplier should return result", function() {
-        var threeArgumentsMultiplier = function(x,y,z) {
-            return x * y * z;
-        };
-        var curryMultiplier = JsCourse.curry(threeArgumentsMultiplier);
+        it("curry adder should return result", function() {
+            var threeArgumentsAdder = function(x,y,z) {
+                return x + y + z;
+            };
+            var curryAdder = firstclassfunc.curry(threeArgumentsAdder);
+            expect(curryAdder(3)(2)(1)).toEqual(6);
+        });
 
-        expect(curryMultiplier(2)(2)(2)).toEqual(8);
+        it("curry multiplier should return result", function() {
+            var threeArgumentsMultiplier = function(x,y,z) {
+                return x * y * z;
+            };
+            var curryMultiplier = firstclassfunc.curry(threeArgumentsMultiplier);
 
-        var multiplyFourByX = curryMultiplier(2)(2);
+            expect(curryMultiplier(2)(2)(2)).toEqual(8);
 
-        expect(multiplyFourByX(4)).toEqual(16);
+            var multiplyFourByX = curryMultiplier(2)(2);
+
+            expect(multiplyFourByX(4)).toEqual(16);
+        });
     });
 });

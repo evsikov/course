@@ -1,11 +1,14 @@
-describe("test sum of random numbers", function() {
-    'use strict';
+define (['firstclassfunc'], function (firstclassfunc) {
 
-    it("should be defined", function() {
-        expect(JsCourse.sumOfRandomNumbers).toBeDefined();
-    });
+    describe("test sum of random numbers", function () {
+        'use strict';
 
-    it("", function() {
-        expect(JsCourse.sumOfRandomNumbers(20).length).toEqual(20);
+        it("should be defined", function () {
+            expect(firstclassfunc.sumOfRandomNumbers).toBeDefined();
+        });
+
+        it("", function () {
+            expect(firstclassfunc.sumOfRandomNumbers(20).length).toEqual(20);
+        });
     });
 });

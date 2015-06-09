@@ -1,14 +1,17 @@
-describe("test first", function() {
-    'use strict';
+define (['firstclassfunc'], function (firstclassfunc) {
 
-    it("should be defined", function() {
-        expect(JsCourse.first).toBeDefined();
-    });
+    describe("test first", function() {
+        'use strict';
 
-    it("", function() {
-        var condition = function(val) {
-            return val < 0;
-        };
-        expect(JsCourse.first([1,2,-5,0,-3], condition)).toEqual(-5);
+        it("should be defined", function() {
+            expect(firstclassfunc.first).toBeDefined();
+        });
+
+        it("", function() {
+            var condition = function(val) {
+                return val < 0;
+            };
+            expect(firstclassfunc.first([1,2,-5,0,-3], condition)).toEqual(-5);
+        });
     });
 });
