@@ -1,6 +1,12 @@
 define([], function() {
     'use strict';
 
+    /**
+     * Dictionary of possible logging levels.
+     * BuiltIn levels should not be override.
+     * May be extended if existing appenders don't satisfy developer's needs.
+     * @type {{console: Function, alert: Function, window: Function, webEndpoint: Function}}
+     */
     var logLevels = {};
 
     /**
@@ -73,7 +79,6 @@ define([], function() {
     function logMessage (msg, dest) {
         var gotDestination = destinations[dest];//
         if (gotDestination) {
-            //console.log("Logging with action: " + action.toString());
             return gotDestination.action(msg);
         } else {
             return console.log ("Logging method for destination " + dest + " is not defined");
@@ -135,9 +140,21 @@ define([], function() {
     }
 
     return {
+        /**
+         * Use this logger class with 'new' word to create a library instance
+         */
         Logger : Logger,
+        /**
+         * Add log level to library. Then use it as a constructor argument when creating new logger instance
+         */
         addLogLevel : addLogLevel,
+        /**
+         * Add log destination to library. Then use it as a constructor argument when creating new logger instance
+         */
         addLogDestination : addLogDestination,
+        /**
+         * Add some event that library will log.
+         */
         addEvent : addEvent
     }
 });

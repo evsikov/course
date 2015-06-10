@@ -48,5 +48,4 @@ define(['logger'], function (logger) {
             }).toThrow(new Error("Can't override built-in destination console"));
         });
     });
-
 });
